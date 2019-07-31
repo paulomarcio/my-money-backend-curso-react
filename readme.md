@@ -1,4 +1,4 @@
-![Logo](https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png)
+![Logo](http://pluspng.com/img-png/nodejs-logo-png--375.png)
 
 # MyMoney - Back-end
 
