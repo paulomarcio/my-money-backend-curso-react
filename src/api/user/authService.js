@@ -9,7 +9,7 @@ const passwordRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})/
 
 const sendErrorsFromDB = (res, dbErrors) => {
     const errors = []
-    _.forIn(dbErrors.errors, error => errors.push(error.message))
+    dbErrors.forEach(error => errors.push(error.message))
     return res.status(400).json({errors})
 }
 
@@ -70,7 +70,7 @@ const signup = (req, res, next) => {
             return res.status(400).send({errors: ['Usuário já cadastrado.']})
         } else {
             const newUser = new User({ name, email, password: passwordHash })
-            
+
             newUser.save(err => {
                 if(err) {
                     return sendErrorsFromDB(res, err)
